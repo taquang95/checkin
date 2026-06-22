@@ -1,0 +1,6 @@
+{
+  "name": "Form Checkin Google Sheets",
+  "description": "Form check-in thu thập họ tên, số điện thoại, email hỗ trợ tích hợp lưu trữ trực tiếp vào Google Sheets thông qua Google Apps Script (.gs).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
