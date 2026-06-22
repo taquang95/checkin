@@ -18,13 +18,13 @@ export default function LogoSelector({ type, customUrl, className = '' }: LogoSe
   if (type === 'custom' && customUrl && !imageError) {
     return (
       <div className={`flex flex-col items-center justify-center ${className}`}>
-        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 p-1 flex items-center justify-center shadow-xs">
+        <div className="relative max-w-[280px] flex items-center justify-center">
           <img
             src={customUrl}
             alt="Logo"
             referrerPolicy="no-referrer"
             onError={() => setImageError(true)}
-            className="w-full h-full object-contain rounded-xl"
+            className="max-h-24 md:max-h-28 w-auto object-contain transition-all duration-300"
           />
         </div>
       </div>

@@ -18,7 +18,8 @@ const DEFAULT_CONFIG: AppConfig = {
   scriptUrl: 'https://script.google.com/macros/s/AKfycbwvxpQndJNUoYjMBtOR-rx4ZsSlM_iP1aHHSSUJq0aUXUdd6tvoLySrpnMJTNfeX6La/exec',
   eventName: 'ĐÀO TẠO CHUYÊN SÂU - KỸ NĂNG TELESALE',
   eventDate: '24 tháng 6 năm 2026',
-  logoType: 'tech',
+  logoType: 'custom',
+  customLogoUrl: 'https://i.postimg.cc/90XZ40Sk/logo-nna.png',
   themeColor: '#2563eb',
 };
 
@@ -141,6 +142,9 @@ export default function App() {
         if (parsed.eventDate === '22 tháng 6, 2026') {
           parsed.eventDate = '24 tháng 6 năm 2026';
         }
+        // Always enforce the custom logo
+        parsed.logoType = 'custom';
+        parsed.customLogoUrl = 'https://i.postimg.cc/90XZ40Sk/logo-nna.png';
         setConfig(parsed);
       }
     } catch (e) {
@@ -302,7 +306,10 @@ export default function App() {
       <main className="max-w-3xl mx-auto px-4 pt-8 space-y-8">
         
         {/* EVENT PRESENTATION HERO CARD */}
-        <div className="text-center space-y-2.5 max-w-xl mx-auto">
+        <div 
+          className="text-center space-y-2.5 max-w-xl mx-auto select-none cursor-default"
+          onDoubleClick={() => setIsAdminMode(prev => !prev)}
+        >
           <LogoSelector 
             type={config.logoType} 
             customUrl={config.customLogoUrl} 
@@ -543,18 +550,7 @@ export default function App() {
         </footer>
       )}
 
-      {/* Subtle Admin Mode Floating Trigger */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <button
-          onClick={() => setIsAdminMode((prev) => !prev)}
-          className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200/60 text-[11px] font-bold text-slate-400 hover:text-slate-600 shadow-md cursor-pointer select-none transition-all duration-250 hover:shadow-lg active:scale-95"
-          id="toggle-admin-portal-btn"
-          title={isAdminMode ? "Ẩn công cụ quản trị" : "Hiển thị công cụ quản trị"}
-        >
-          <Settings className="w-3.5 h-3.5" />
-          <span>{isAdminMode ? 'Thoát Quản Trị' : 'Quản Trị / Thiết lập'}</span>
-        </button>
-      </div>
+      {/* Subtle Admin Mode Floating Trigger - Completely Hidden */}
 
       {/* SETTINGS DIALOG POPUP */}
       <ConfigModal
