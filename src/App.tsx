@@ -459,7 +459,7 @@ export default function App() {
                     <div className="text-center text-xs">
                       {successRecord.synced ? (
                         <p className="text-emerald-700 font-semibold flex items-center justify-center gap-1 bg-emerald-50 py-2 rounded-lg">
-                          <CheckCircle className="w-3.5 h-3.5" /> Chúc mừng bạn đã Checkin thành công!
+                          <CheckCircle className="w-3.5 h-3.5" /> Mời anh/chị di chuyển lên phòng đào tạo tầng 2!
                         </p>
                       ) : (
                         <p className="text-amber-700 font-semibold flex items-center justify-center gap-1 bg-amber-50 py-2 rounded-lg">
