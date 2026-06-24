@@ -16,10 +16,10 @@ const STORAGE_CONFIG_KEY = 'gs_checkin_config_v1';
 
 const DEFAULT_CONFIG: AppConfig = {
   scriptUrl: 'https://script.google.com/macros/s/AKfycbwvxpQndJNUoYjMBtOR-rx4ZsSlM_iP1aHHSSUJq0aUXUdd6tvoLySrpnMJTNfeX6La/exec',
-  eventName: 'ĐÀO TẠO CHUYÊN SÂU - KỸ NĂNG TELESALE',
+  eventName: 'CALL TO DEAL - BIẾN CUỘC GỌI THÀNH TIỀN',
   eventDate: '24 tháng 6 năm 2026',
   logoType: 'custom',
-  customLogoUrl: 'https://i.postimg.cc/90XZ40Sk/logo-nna.png',
+  customLogoUrl: 'https://i.postimg.cc/PqjhZZ6q/nna-logo-trang.png',
   themeColor: '#2563eb',
 };
 
